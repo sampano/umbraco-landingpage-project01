@@ -1,0 +1,87 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Services>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+           <!-- Content section 1-->
+        <section id="home">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                  <div class="col-lg-6 order-lg-2">
+                        <div class="p-5">
+                            @using Umbraco.Cms.Core.Models
+                            @{
+                                var typedMediaPickerSingleFirst = Model.Value<MediaWithCrops>("firstContentImage");
+                                if (typedMediaPickerSingleFirst != null)
+                                {
+                                    <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleFirst.MediaUrl()"  alt="@typedMediaPickerSingleFirst.Value("alt")" />
+                                }
+                            }                       
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">@Model.Value("firstContentTitle")</h2>
+                            <p>@Model.Value("firstContentParagraph")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+                   
+
+        <!-- Content section 2-->
+         <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                                @{
+                                    var typedMediaPickerSingleSecond = Model.Value<MediaWithCrops>("secondContentImage");
+                                    if (typedMediaPickerSingleSecond != null)
+                                    {
+                                        <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleSecond.MediaUrl()"  alt="@typedMediaPickerSingleSecond.Value("alt")" />
+                                    }
+                                }          
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                             <h2 class="display-4">@Model.Value("secondContentTitle")</h2>
+                            <p>@Model.Value("secondContentParagraph")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+         <!-- Content section 3-->
+       <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5">
+                            @{
+                                var typedMediaPickerSingleThird = Model.Value<MediaWithCrops>("thirdContentImage");
+                                if (typedMediaPickerSingleThird != null)
+                                {
+                                    <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleThird.MediaUrl()"  alt="@typedMediaPickerSingleThird.Value("alt")" />
+                                }
+                            }          
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">@Model.Value("thirdContentTitle")</h2>
+                            <p>@Model.Value("thirdContentParagraph")</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

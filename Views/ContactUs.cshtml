@@ -1,0 +1,22 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Forms.Web
+@{
+	Layout = "Master.cshtml";
+}
+
+ <!-- Main Content-->
+        <main class="mb-4 pt-5" id="contact" >
+             @Html.RenderUmbracoFormDependencies()
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>@Model.Value("contactText")</p>
+                        <div class="my-5">
+                            @Model.Value("contactForm")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>

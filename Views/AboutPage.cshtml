@@ -1,0 +1,117 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+<section  id="about" class="pt-5">
+              <div class="container px-5">
+                <div class="text-center">
+                 
+                </div>
+                <ul class="timeline">
+                  <li>
+                      <div class="timeline-image">
+                 
+                    @using Umbraco.Cms.Core.Models
+                            @{
+                                var typedMediaPickerSingleFirst = Model.Value<MediaWithCrops>("aboutFirstImage");
+                                if (typedMediaPickerSingleFirst != null)
+                                {
+                                    <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleFirst.MediaUrl()"  alt="@typedMediaPickerSingleFirst.Value("alt")" />
+                                }
+                            } 
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4>@Model.Value("aboutYearContent")</h4>
+                        <h4 class="subheading">@Model.Value("aboutTitleContent")</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">
+                         @Model.Value("aboutParagraphContent")
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                    <div class="timeline-image">
+                   @using Umbraco.Cms.Core.Models
+                            @{
+                                var typedMediaPickerSingleSecond = Model.Value<MediaWithCrops>("aboutSecondImage");
+                                if (typedMediaPickerSingleSecond != null)
+                                {
+                                    <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleSecond.MediaUrl()"  alt="@typedMediaPickerSingleSecond.Value("alt")" />
+                                }
+                            }     
+                        </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4>@Model.Value("aboutSecondYearContent")</h4>
+                        <h4 class="subheading">@Model.Value("aboutSecondTitle")</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">
+                         @Model.Value("aboutSecondParagraph")
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="timeline-image">
+                    @using Umbraco.Cms.Core.Models
+                            @{
+                                var typedMediaPickerSingleThird = Model.Value<MediaWithCrops>("aboutThirdImage");
+                                if (typedMediaPickerSingleThird != null)
+                                {
+                                    <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleThird.MediaUrl()"  alt="@typedMediaPickerSingleThird.Value("alt")" />
+                                }
+                            }
+                        </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4>@Model.Value("aboutThirdYear")</h4>
+                        <h4 class="subheading">@Model.Value("aboutThirdTitle")</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">
+                         @Model.Value("aboutThirdParagraph")
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                       <div class="timeline-image">
+                       @using Umbraco.Cms.Core.Models
+                            @{
+                                var typedMediaPickerSingleFourth = Model.Value<MediaWithCrops>("aboutFourthImage");
+                                if (typedMediaPickerSingleFourth != null)
+                                {
+                                    <img class="img-fluid rounded-circle" src="@typedMediaPickerSingleFourth.MediaUrl()"  alt="@typedMediaPickerSingleFourth.Value("alt")" />
+                                }
+                            }    
+                        </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4>@Model.Value("aboutForthYear")</h4>
+                        <h4 class="subheading">@Model.Value("aboutForthTitle")</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">
+                         @Model.Value("aboutFourthParagraph")
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="timeline-inverted">
+                    <div class="timeline-image">
+                      <h4>
+                       @Model.Value("aboutText")
+                      </h4>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+    </section>
